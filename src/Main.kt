@@ -53,9 +53,6 @@ fun main() {
     heroiVoador.lutar()
     heroiForca.lutar()
     heroiTecnologico.lutar()
-
-    // PARTE 4: SOBRECARREGANDO PROPRIEDADES E FUNÇÕES
-
 }
 
 open class Heroi(val nome: String, val identidadeSecreta: String, var poder: String, var forca: Int, var resistencia: Int) {
