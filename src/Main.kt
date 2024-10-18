@@ -11,9 +11,6 @@ fun main() {
     // Alterando o poder do herói 3
     heroi3.poder = "Voo"
 
-    // Manipulando o herói 3 (var)
-    heroi3 = Heroi("Viúva Negra", "Natasha Romanoff", "Habilidades de Espionagem", 60, 70)
-
     // PARTE 2: EQUIPE DE SUPER-HERÓIS (LISTAS MUTÁVEIS E IMUTÁVEIS)
     // Inicializando a equipe
     val equipe = Equipe(listOf(heroi1, heroi2, heroi3))
@@ -76,7 +73,7 @@ class HeroiVoador(nome: String, identidadeSecreta: String, poder: String, forca:
 class HeroiForca(nome: String, identidadeSecreta: String, poder: String, forca: Int, resistencia: Int) : Heroi(nome, identidadeSecreta, poder, forca, resistencia) {
     override fun lutar() {
         println("Herói, usando força bruta, lutando com poder: $poder")
-        resistencia += (resistencia * 0.2).toInt()
+        resistencia = (resistencia * 1.2).toInt()
         println("Resistência atual: $resistencia")
     }
 }
@@ -84,7 +81,7 @@ class HeroiForca(nome: String, identidadeSecreta: String, poder: String, forca: 
 class HeroiTecnologico(nome: String, identidadeSecreta: String, poder: String, forca: Int, resistencia: Int) : Heroi(nome, identidadeSecreta, poder, forca, resistencia) {
     override fun lutar() {
         println("Herói, usando gadgets tecnológicos, luta com o seu poder: $poder")
-        resistencia += (resistencia * 0.05).toInt()
+        resistencia = (resistencia * 1.05).toInt()
         println("Resistência atual: $resistencia")
     }
 }
