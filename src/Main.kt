@@ -12,8 +12,9 @@ fun main() {
     heroi3.poder = "Voo"
 
     // PARTE 2: EQUIPE DE SUPER-HERÓIS (LISTAS MUTÁVEIS E IMUTÁVEIS)
-    // Inicializando a equipe
+    println("Iniciando a equipe de super-heróis...")
     val equipe = Equipe(listOf(heroi1, heroi2, heroi3))
+    equipe.mostrarHerois()
 
     // Adicionando mais heróis à equipe
     val heroi4 = Heroi("Capitão América", "Steve Rogers", "Super Força", 80, 90)
@@ -21,9 +22,13 @@ fun main() {
 
     equipe.adicionarHeroi(heroi4)
     equipe.adicionarHeroi(heroi5)
+    equipe.mostrarHerois()
 
     // Removendo um herói da equipe
     equipe.removerHeroi(heroi1)
+    equipe.mostrarHerois()
+
+    println("-----------------------------------")
 
     // PARTE 3: CLASSES E HERANÇA
     // Criando instâncias das subclasses de heróis
@@ -32,6 +37,7 @@ fun main() {
     val heroiTecnologico = HeroiTecnologico("Homem de Ferro", "Tony Stark", "Tecnologia", 80, 20)
 
     // Apresentando os heróis
+    println("Apresentando os heróis...")
     heroi1.apresentar()
     heroi2.apresentar()
     heroi3.apresentar()
@@ -41,7 +47,9 @@ fun main() {
     heroiForca.apresentar()
     heroiTecnologico.apresentar()
 
+    println("-----------------------------------")
     // Lutando com os heróis
+    println("Lutando com os heróis...")
     heroi1.lutar()
     heroi2.lutar()
     heroi3.lutar()
@@ -99,5 +107,13 @@ class Equipe(val heroisIniciais: List<Heroi>) {
 
     fun removerHeroi(heroi: Heroi) {
         heroisAtuais.remove(heroi)
+    }
+
+    fun mostrarHerois() {
+        print("Heróis na equipe: ")
+        for (heroi in heroisAtuais) {
+            print("${heroi.nome}, ")
+        }
+        println()
     }
 }
